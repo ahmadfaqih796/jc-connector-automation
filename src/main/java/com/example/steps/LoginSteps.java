@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginSteps {
    private WebDriver driver;
@@ -22,18 +24,20 @@ public class LoginSteps {
 
    @Given("I am on the login page")
    public void navigateToLoginPage() {
-      driver.get("https://www.example.com/login");
+      driver.get("https://dev.dikahadir.com/job-connector/authentication/login");
    }
 
    @When("I enter username as {string} and password as {string}")
-   public void enterCredentials(String username, String password) {
-      loginPage.enterUsername(username);
+   public void enterCredentials(String email, String password) throws InterruptedException {
+      loginPage.enterEmail(email);
       loginPage.enterPassword(password);
+      Thread.sleep(2000);
    }
 
    @When("I click the login button")
-   public void clickLoginButton() {
+   public void clickLoginButton() throws InterruptedException {
       loginPage.clickLoginButton();
+      Thread.sleep(2000);
    }
 
    @Then("I should be logged in successfully")

@@ -1,4 +1,3 @@
 com\example\steps\LoginSteps.class
 com\example\utils\WebDriverFactory.class
 com\example\pages\LoginPage.class
-com\example\pages\MyTest.class
