@@ -8,8 +8,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginSteps {
    private WebDriver driver;
@@ -17,7 +15,6 @@ public class LoginSteps {
 
    @Before
    public void setUp() {
-      // Inisialisasi WebDriver
       driver = WebDriverFactory.createWebDriver();
       loginPage = new LoginPage(driver);
    }
@@ -42,12 +39,10 @@ public class LoginSteps {
 
    @Then("I should be logged in successfully")
    public void verifySuccessfulLogin() {
-      // Verifikasi atau tindakan setelah login berhasil
    }
 
    @After
    public void tearDown() {
-      // Tutup browser
       driver.quit();
    }
 }
