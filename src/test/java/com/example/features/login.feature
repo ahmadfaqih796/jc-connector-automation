@@ -1,7 +1,18 @@
 Feature: Login
 
-Scenario: Successful login
-    Given I am on the login page
-    When I enter username as "admin@connector.com" and password as "admin@connector"
-    And I click the login button
-    Then I should be logged in successfully
+Scenario: Failed login
+    Given Aku berada di Halaman Login
+    When Aku memasukkan email "<email>" dan password "<password>"
+    And Aku mengklik tombol Login
+    Then Aku Gagal Login
+    Examples:
+    | email                | password           |
+    | backlog@def.com      | 123                |
+    | admin@connector.com  | 123                |
+    | admin@con.com        | admin@connector    |
+
+Scenario Outline: Successful login
+    Given Aku berada di Halaman Login
+    When Aku memasukkan email "admin@connector.com" dan password "admin@connector"
+    And Aku mengklik tombol Login
+    Then Aku berhasil Login
