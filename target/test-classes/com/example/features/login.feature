@@ -1,6 +1,6 @@
 Feature: Login
 
-Scenario: Failed login
+Scenario Outline: Failed login
     Given Aku berada di Halaman Login
     When Aku memasukkan email "<email>" dan password "<password>"
     And Aku mengklik tombol Login
@@ -11,7 +11,7 @@ Scenario: Failed login
     | admin@connector.com  | 123                |
     | admin@con.com        | admin@connector    |
 
-Scenario Outline: Successful login
+Scenario: Successful login
     Given Aku berada di Halaman Login
     When Aku memasukkan email "admin@connector.com" dan password "admin@connector"
     And Aku mengklik tombol Login
